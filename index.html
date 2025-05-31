@@ -298,7 +298,7 @@
                             </td>
                             <td class="py-3 px-4 text-gray-400">ABBA</td>
                             <td class="py-3 px-4 text-gray-400">Arrival</td>
-                            <td class="py-3 px-4 text-gray-400">21.05</td>
+                            <td class="py-3 px-4 text-gray-400">3.53</td>
                             <td class="py-3 px-4">
                                 <button
                                     class="play-btn opacity-0 group-hover:opacity-100 text-gray-400 hover:text-white transition"
@@ -611,265 +611,329 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // ข้อมูลเพลงทั้งหมด
-            const songs = {
-                "summer-vibes": {
-                    title: "Summer Vibes",
-                    artist: "The Beach Boys",
-                    album: "Endless Summer",
-                    duration: "18:08",
-                    src: "1.mp3",
-                    cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
-                },
-                "dancing-queen": {
-                    title: "Dancing Queen",
-                    artist: "ABBA",
-                    album: "Arrival",
-                    duration: "21.05",
-                    src: "4.mp3",
-                    cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
-                },
-                "bohemian-rhapsody": {
-                    title: "Bohemian Rhapsody",
-                    artist: "Queen",
-                    album: "A Night at the Opera",
-                    duration: "5:55",
-                    src: "2.mp3",
-                    cover: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
-                },
-                "billie-jean": {
-                    title: "Billie Jean",
-                    artist: "Michael Jackson",
-                    album: "Thriller",
-                    duration: "4:54",
-                    src: "5.mp3",
-                    cover: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
-                },
-                "hotel-california": {
-                    title: "Hotel California",
-                    artist: "Eagles",
-                    album: "Hotel California",
-                    duration: "6:30",
-                    src: "3.mp3",
-                    cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
-                },
-                "sweet-child": {
-                    title: "Sweet Child O' Mine",
-                    artist: "Guns N' Roses",
-                    album: "Appetite for Destruction",
-                    duration: "5:56",
-                    src: "6",
-                    cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
-                }
-            };
+    document.addEventListener('DOMContentLoaded', function() {
+        // ข้อมูลเพลงทั้งหมด
+        const songs = {
+            "summer-vibes": {
+                title: "Summer Vibes",
+                artist: "The Beach Boys",
+                album: "Endless Summer",
+                duration: "3:45",
+                src: "1.mp3",
+                cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+            },
+            "dancing-queen": {
+                title: "Dancing Queen",
+                artist: "ABBA",
+                album: "Arrival",
+                duration: "3:50",
+                src: "4.mp3",
+                cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+            },
+            "bohemian-rhapsody": {
+                title: "Bohemian Rhapsody",
+                artist: "Queen",
+                album: "A Night at the Opera",
+                duration: "5:55",
+                src: "2.mp3",
+                cover: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+            },
+            "billie-jean": {
+                title: "Billie Jean",
+                artist: "Michael Jackson",
+                album: "Thriller",
+                duration: "4:54",
+                src: "5.mp3",
+                cover: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+            },
+            "hotel-california": {
+                title: "Hotel California",
+                artist: "Eagles",
+                album: "Hotel California",
+                duration: "6:30",
+                src: "3.mp3",
+                cover: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+            },
+            "sweet-child": {
+                title: "Sweet Child O' Mine",
+                artist: "Guns N' Roses",
+                album: "Appetite for Destruction",
+                duration: "5:56",
+                src: "6.mp3",
+                cover: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+            }
+        };
 
-            // สร้าง Audio element
-            const audio = new Audio();
-            let currentSong = null;
-            let isPlaying = false;
-            let isShuffle = false;
-            let isRepeat = false;
-            let volume = 0.7;
-            audio.volume = volume;
+        // สร้าง Audio element
+        const audio = new Audio();
+        let currentSong = null;
+        let isPlaying = false;
+        let isShuffle = false;
+        let isRepeat = false;
+        let volume = 0.7;
+        audio.volume = volume;
 
-            // รายการเพลงทั้งหมดเรียงตามลำดับ
-            const songIds = Object.keys(songs);
-            let currentSongIndex = -1;
+        // รายการเพลงทั้งหมดเรียงตามลำดับ
+        const songIds = Object.keys(songs);
+        let currentPlaylist = [...songIds]; // สร้างสำเนาสำหรับ playlist ปัจจุบัน
+        let currentSongIndex = -1;
 
-            // อัพเดท Now Playing Bar
-            function updateNowPlaying(songId) {
-                const song = songs[songId];
-                document.querySelector('.now-playing-img').src = song.cover;
-                document.querySelector('.now-playing-title').textContent = song.title;
-                document.querySelector('.now-playing-artist').textContent = song.artist;
-                document.querySelector('.duration').textContent = song.duration;
-                document.querySelector('.current-time').textContent = "0:00";
-                document.querySelector('.progress-bar').style.width = "0%";
+        // อัพเดท Now Playing Bar
+        function updateNowPlaying(songId) {
+            const song = songs[songId];
+            if (!song) return;
+
+            document.querySelector('.now-playing-img').src = song.cover;
+            document.querySelector('.now-playing-title').textContent = song.title;
+            document.querySelector('.now-playing-artist').textContent = song.artist;
+            document.querySelector('.duration').textContent = song.duration;
+            document.querySelector('.current-time').textContent = "0:00";
+            document.querySelector('.progress-bar').style.width = "0%";
+        }
+
+        // ฟังก์ชันสุ่มเพลง
+        function shufflePlaylist() {
+            currentPlaylist = [...songIds];
+            for (let i = currentPlaylist.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [currentPlaylist[i], currentPlaylist[j]] = [currentPlaylist[j], currentPlaylist[i]];
+            }
+        }
+
+        // เล่นเพลง
+        async function playSong(songId) {
+            if (!songs[songId]) return;
+
+            // หาลำดับเพลงปัจจุบัน
+            currentSongIndex = currentPlaylist.indexOf(songId);
+            
+            if (currentSong === songId && isPlaying) {
+                await audio.pause();
+                isPlaying = false;
+                document.querySelector('.play-pause-btn i').className = 'fas fa-play';
+                return;
             }
 
-            // เล่นเพลง
-            function playSong(songId) {
-                if (!songs[songId]) return;
-
-                // หาลำดับเพลงปัจจุบัน
-                currentSongIndex = songIds.indexOf(songId);
-
-                if (currentSong === songId && isPlaying) {
-                    // ถ้าเพลงเดียวกันกำลังเล่นอยู่ ให้หยุด
-                    audio.pause();
-                    isPlaying = false;
-                    document.querySelector('.play-pause-btn i').className = 'fas fa-play';
-                    return;
-                }
-
+            try {
                 currentSong = songId;
                 audio.src = songs[songId].src;
-                audio.play()
-                    .then(() => {
-                        isPlaying = true;
-                        document.querySelector('.play-pause-btn i').className = 'fas fa-pause';
-                        updateNowPlaying(songId);
-                    })
-                    .catch(error => {
-                        console.error("Error playing song:", error);
-                    });
-            }
-
-            // เล่นเพลงถัดไป
-            function playNextSong() {
-                if (currentSongIndex === -1) return;
-
-                let nextIndex;
-                if (isShuffle) {
-                    // สุ่มเพลงถัดไป
-                    nextIndex = Math.floor(Math.random() * songIds.length);
-                    while (nextIndex === currentSongIndex && songIds.length > 1) {
-                        nextIndex = Math.floor(Math.random() * songIds.length);
-                    }
-                } else {
-                    // เล่นเพลงถัดไปตามลำดับ
-                    nextIndex = (currentSongIndex + 1) % songIds.length;
-                }
-
-                playSong(songIds[nextIndex]);
-            }
-
-            // เล่นเพลงก่อนหน้า
-            function playPrevSong() {
-                if (currentSongIndex === -1) return;
-
-                let prevIndex;
-                if (isShuffle) {
-                    // สุ่มเพลงก่อนหน้า
-                    prevIndex = Math.floor(Math.random() * songIds.length);
-                    while (prevIndex === currentSongIndex && songIds.length > 1) {
-                        prevIndex = Math.floor(Math.random() * songIds.length);
-                    }
-                } else {
-                    // เล่นเพลงก่อนหน้าตามลำดับ
-                    prevIndex = (currentSongIndex - 1 + songIds.length) % songIds.length;
-                }
-
-                playSong(songIds[prevIndex]);
-            }
-
-            // เพิ่ม event listeners ให้ปุ่มเล่นทั้งหมด
-            document.querySelectorAll('.play-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const songId = this.getAttribute('data-song');
-                    playSong(songId);
+                
+                // หยุดเพลงปัจจุบันก่อน (ถ้ามี)
+                audio.pause();
+                
+                // รอให้ข้อมูลเพลงโหลดเสร็จ
+                await new Promise((resolve) => {
+                    audio.onloadedmetadata = resolve;
+                    audio.load();
                 });
-            });
+                
+                // เล่นเพลงใหม่
+                await audio.play();
+                
+                isPlaying = true;
+                document.querySelector('.play-pause-btn i').className = 'fas fa-pause';
+                updateNowPlaying(songId);
+            } catch (error) {
+                console.error("Error playing song:", error);
+                showNotification("เกิดข้อผิดพลาดในการเล่นเพลง");
+            }
+        }
 
-            // เล่นเพลย์ลิสต์ทั้งหมด
-            document.querySelector('.play-playlist').addEventListener('click', function () {
+        // เล่นเพลงถัดไป
+        function playNextSong() {
+            if (currentSongIndex === -1 || currentPlaylist.length === 0) return;
+            
+            let nextIndex;
+            if (isShuffle) {
+                // สุ่มเพลงถัดไป
+                nextIndex = Math.floor(Math.random() * currentPlaylist.length);
+            } else {
+                // เล่นตามลำดับ
+                nextIndex = (currentSongIndex + 1) % currentPlaylist.length;
+            }
+            
+            playSong(currentPlaylist[nextIndex]);
+        }
+
+        // เล่นเพลงก่อนหน้า
+        function playPrevSong() {
+            if (currentSongIndex === -1 || currentPlaylist.length === 0) return;
+            
+            let prevIndex;
+            if (isShuffle) {
+                // สุ่มเพลงก่อนหน้า
+                prevIndex = Math.floor(Math.random() * currentPlaylist.length);
+            } else {
+                // เล่นตามลำดับ
+                prevIndex = (currentSongIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
+            }
+            
+            playSong(currentPlaylist[prevIndex]);
+        }
+
+        // ฟังก์ชันแสดงการแจ้งเตือน
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white px-4 py-2 rounded-md shadow-lg text-sm animate-fade-in-out';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // ลบ notification หลังจาก 2 วินาที
+            setTimeout(() => {
+                notification.remove();
+            }, 2000);
+        }
+
+        // เพิ่ม event listeners ให้ปุ่มเล่นทั้งหมด
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const songId = this.getAttribute('data-song');
+                playSong(songId);
+            });
+        });
+
+        // เล่นเพลย์ลิสต์ทั้งหมด
+        document.querySelector('.play-playlist').addEventListener('click', function() {
+            if (songIds.length > 0) {
                 playSong(songIds[0]);
-            });
+            }
+        });
 
-            // ควบคุม Now Playing Bar
-            document.querySelector('.play-pause-btn').addEventListener('click', function () {
-                if (currentSong) {
-                    if (isPlaying) {
-                        audio.pause();
-                        this.querySelector('i').className = 'fas fa-play';
-                    } else {
-                        audio.play();
+        // ควบคุม Now Playing Bar
+        document.querySelector('.play-pause-btn').addEventListener('click', async function() {
+            if (currentSong) {
+                if (isPlaying) {
+                    await audio.pause();
+                    this.querySelector('i').className = 'fas fa-play';
+                } else {
+                    try {
+                        await audio.play();
                         this.querySelector('i').className = 'fas fa-pause';
+                    } catch (error) {
+                        console.error("Error resuming playback:", error);
                     }
-                    isPlaying = !isPlaying;
                 }
-            });
+                isPlaying = !isPlaying;
+            }
+        });
 
-            document.querySelector('.prev-btn').addEventListener('click', playPrevSong);
-            document.querySelector('.next-btn').addEventListener('click', playNextSong);
+        document.querySelector('.prev-btn').addEventListener('click', playPrevSong);
+        document.querySelector('.next-btn').addEventListener('click', playNextSong);
 
-            document.querySelector('.shuffle-btn').addEventListener('click', function () {
-                isShuffle = !isShuffle;
-                this.classList.toggle('text-pink-500');
-                this.classList.toggle('text-gray-300');
-            });
+        document.querySelector('.shuffle-btn').addEventListener('click', function() {
+            isShuffle = !isShuffle;
+            this.classList.toggle('text-pink-500');
+            this.classList.toggle('text-gray-300');
+            
+            if (isShuffle) {
+                shufflePlaylist();
+                showNotification('โหมดสุ่มเพลงถูกเปิดใช้งาน');
+            } else {
+                currentPlaylist = [...songIds];
+                showNotification('โหมดสุ่มเพลงถูกปิดใช้งาน');
+            }
+        });
 
-            document.querySelector('.repeat-btn').addEventListener('click', function () {
-                isRepeat = !isRepeat;
-                this.classList.toggle('text-pink-500');
-                this.classList.toggle('text-gray-300');
-            });
+        document.querySelector('.repeat-btn').addEventListener('click', function() {
+            isRepeat = !isRepeat;
+            this.classList.toggle('text-pink-500');
+            this.classList.toggle('text-gray-300');
+            showNotification(isRepeat ? 'โหมดเล่นซ้ำถูกเปิดใช้งาน' : 'โหมดเล่นซ้ำถูกปิดใช้งาน');
+        });
 
-            // อัพเดท progress bar
-            audio.addEventListener('timeupdate', function () {
+        // อัพเดท progress bar
+        audio.addEventListener('timeupdate', function() {
+            if (audio.duration) {
                 const progress = (audio.currentTime / audio.duration) * 100;
                 document.querySelector('.progress-bar').style.width = `${progress}%`;
                 document.querySelector('.current-time').textContent = formatTime(audio.currentTime);
-            });
-
-            // เมื่อเพลงจบ
-            audio.addEventListener('ended', function () {
-                if (isRepeat) {
-                    // เล่นเพลงเดิมอีกครั้ง
-                    audio.currentTime = 0;
-                    audio.play();
-                } else {
-                    // เล่นเพลงถัดไป
-                    playNextSong();
-                }
-            });
-
-            // คลิก progress bar เพื่อข้ามไปยังตำแหน่งต่างๆ
-            document.querySelector('.progress-container').addEventListener('click', function (e) {
-                if (!currentSong) return;
-
-                const width = this.clientWidth;
-                const clickX = e.offsetX;
-                const duration = audio.duration;
-                audio.currentTime = (clickX / width) * duration;
-            });
-
-            // ควบคุมระดับเสียง
-            document.querySelector('.volume-container').addEventListener('click', function (e) {
-                if (e.target.closest('.volume-icon')) {
-                    // สลับระหว่างปิด/เปิดเสียง
-                    if (audio.volume > 0) {
-                        audio.volume = 0;
-                        document.querySelector('.volume-icon').className = 'fas fa-volume-mute volume-icon text-gray-400 mr-2';
-                        document.querySelector('.volume-progress').style.width = '0%';
-                    } else {
-                        audio.volume = volume;
-                        document.querySelector('.volume-icon').className = 'fas fa-volume-up volume-icon text-gray-400 mr-2';
-                        document.querySelector('.volume-progress').style.width = `${volume * 100}%`;
-                    }
-                } else if (e.target.closest('.volume-slider')) {
-                    // เปลี่ยนระดับเสียง
-                    const width = this.querySelector('.volume-slider').clientWidth;
-                    const clickX = e.offsetX;
-                    volume = Math.min(1, Math.max(0, clickX / width));
-                    audio.volume = volume;
-                    document.querySelector('.volume-progress').style.width = `${volume * 100}%`;
-
-                    // เปลี่ยนไอคอนตามระดับเสียง
-                    const volumeIcon = document.querySelector('.volume-icon');
-                    if (volume === 0) {
-                        volumeIcon.className = 'fas fa-volume-mute volume-icon text-gray-400 mr-2';
-                    } else if (volume < 0.5) {
-                        volumeIcon.className = 'fas fa-volume-down volume-icon text-gray-400 mr-2';
-                    } else {
-                        volumeIcon.className = 'fas fa-volume-up volume-icon text-gray-400 mr-2';
-                    }
-                }
-            });
-
-            // รูปแบบเวลา
-            function formatTime(seconds) {
-                const mins = Math.floor(seconds / 60);
-                const secs = Math.floor(seconds % 60);
-                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
             }
-
-            // เริ่มต้นตั้งค่าระดับเสียง
-            document.querySelector('.volume-progress').style.width = `${volume * 100}%`;
         });
-        
-    </script>
+
+        // เมื่อเพลงจบ
+        audio.addEventListener('ended', function() {
+            if (isRepeat) {
+                // เล่นเพลงเดิมอีกครั้ง
+                audio.currentTime = 0;
+                audio.play().catch(error => console.error("Error replaying song:", error));
+            } else {
+                // เล่นเพลงถัดไป
+                playNextSong();
+            }
+        });
+
+        // คลิก progress bar เพื่อข้ามไปยังตำแหน่งต่างๆ
+        document.querySelector('.progress-container').addEventListener('click', function(e) {
+            if (!currentSong || !audio.duration) return;
+            
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            audio.currentTime = (clickX / width) * audio.duration;
+        });
+
+        // ควบคุมระดับเสียง
+        document.querySelector('.volume-container').addEventListener('click', function(e) {
+            const volumeSlider = this.querySelector('.volume-slider');
+            const volumeIcon = this.querySelector('.volume-icon');
+            
+            if (e.target.closest('.volume-icon')) {
+                // สลับระหว่างปิด/เปิดเสียง
+                if (audio.volume > 0) {
+                    audio.volume = 0;
+                    volumeIcon.className = 'fas fa-volume-mute volume-icon text-gray-400 mr-2';
+                    document.querySelector('.volume-progress').style.width = '0%';
+                } else {
+                    audio.volume = volume;
+                    updateVolumeIcon(volumeIcon, volume);
+                    document.querySelector('.volume-progress').style.width = `${volume * 100}%`;
+                }
+            } else if (e.target.closest('.volume-slider')) {
+                // เปลี่ยนระดับเสียง
+                const width = volumeSlider.clientWidth;
+                const clickX = e.offsetX;
+                volume = Math.min(1, Math.max(0, clickX / width));
+                audio.volume = volume;
+                document.querySelector('.volume-progress').style.width = `${volume * 100}%`;
+                updateVolumeIcon(volumeIcon, volume);
+            }
+        });
+
+        // อัพเดทไอคอนระดับเสียง
+        function updateVolumeIcon(icon, vol) {
+            if (vol === 0) {
+                icon.className = 'fas fa-volume-mute volume-icon text-gray-400 mr-2';
+            } else if (vol < 0.5) {
+                icon.className = 'fas fa-volume-down volume-icon text-gray-400 mr-2';
+            } else {
+                icon.className = 'fas fa-volume-up volume-icon text-gray-400 mr-2';
+            }
+        }
+
+        // รูปแบบเวลา
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // เริ่มต้นตั้งค่าระดับเสียง
+        document.querySelector('.volume-progress').style.width = `${volume * 100}%`;
+    });
+</script>
+
+<style>
+    /* เพิ่ม animation สำหรับ notification */
+    .animate-fade-in-out {
+        animation: fadeInOut 2s ease-in-out forwards;
+    }
+    
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(10px) translateX(-50%); }
+        10% { opacity: 1; transform: translateY(0) translateX(-50%); }
+        90% { opacity: 1; transform: translateY(0) translateX(-50%); }
+        100% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+    }
+</style>
 </body>
 
 </html>
